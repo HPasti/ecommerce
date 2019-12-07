@@ -17,7 +17,7 @@ class Product extends Model {
 	
 	}
 
-	public static function checklist($list){
+	public static function checkList($list){
 
 		foreach ($list as &$row) {
 
@@ -29,6 +29,7 @@ class Product extends Model {
 
 		return $list;
 	}
+
 
 	public function save()
 	{
@@ -135,9 +136,9 @@ class Product extends Model {
 			"products" . DIRECTORY_SEPARATOR . 
 			$this->getidproduct() . ".jpg";
 
-		imagejpeg($image, $dist);
+		//imagejpeg($image, $dist);
 
-		imagedestroy($image);
+	//	imagedestroy($image);
 
 		$this->checkPhoto();
 
