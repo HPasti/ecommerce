@@ -135,9 +135,9 @@ class Product extends Model {
 			"products" . DIRECTORY_SEPARATOR . 
 			$this->getidproduct() . ".jpg";
 
-		//imagejpeg($image, $dist);
+		imagejpeg($image, $dist);
 
-		//imagedestroy($image);
+		imagedestroy($image);
 
 		$this->checkPhoto();
 
