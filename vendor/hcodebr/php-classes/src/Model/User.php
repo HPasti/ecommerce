@@ -15,7 +15,7 @@ class User extends Model {
 
 		$user = new User();
 
-		if (isset($_SESSION[User::SESSION]) && (int) $_SESSION[User::SESSION]['iduser'] > 0){
+		if (isset($_SESSION[User::SESSION]) && (int)$_SESSION[User::SESSION]['iduser'] > 0){
 
 			$user->setData($_SESSION[User::SESSION]);
 
@@ -32,7 +32,7 @@ class User extends Model {
 			||
 			!$_SESSION[User::SESSION]
 			||
-			!(int)$_SESSION[User::SESSION]["iduser"] > 0
+			!(int)$_SESSION[User::SESSION]['iduser'] > 0
 		){
 			
 			return false;
@@ -49,7 +49,7 @@ class User extends Model {
 			
 			} else {
 
-				return true;
+				return false;
 			}
 
 		}
@@ -94,6 +94,7 @@ class User extends Model {
 		if (User::checkLogin($inadmin)) {
 			
 			header("Location: /admin/login");
+			exit;
 		}
 
 
